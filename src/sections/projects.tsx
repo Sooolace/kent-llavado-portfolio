@@ -6,17 +6,17 @@ const projects = [
   {
     id: 1,
     title: 'Cor Jesu College Digital Repository',
-    description: 'A web-based system for storing and managing college documents efficiently, built with React, Node.js, and PostgreSQL."',
+    description: 'A web-based system for storing and managing Cor Jesu College works efficiently, built with React, Node.js, and PostgreSQL."',
     image: '/images/digitalrepo.jpg',
     technologies: ['React', 'Node.js with ',  'TypeScript',  'PostreSQL'],
     link: 'https://cor-jesu-college-digital-repository.vercel.app/',
-    github: 'https://github.com/Sooolace/Cor-Jesu-College-Digital-Repository', // Add your GitHub link (optional)
+    github: 'https://github.com/Sooolace/Cor-Jesu-College-Digital-Repository',
   },
   {
     id: 2,
     title: 'Digos City Veterinary Office Certification System',
     description: 'A system that automates veterinary health certificates, meat shop compliance certificates, and other related certifications, built to streamline issuance and record-keeping.',
-    image: '',
+    image: '/images/certSystem.jpg',
     technologies: ['C#.net', 'Windows Forms',  'MYSQL'],
     link: '#',
     github: '#',

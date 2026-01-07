@@ -19,6 +19,7 @@ export default function Home() {
       <section id="projects">
         <Projects />
       </section>
+
     </SidebarLayout>
   );
 }
