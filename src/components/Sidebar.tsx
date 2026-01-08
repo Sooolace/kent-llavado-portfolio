@@ -13,8 +13,8 @@ export default function SidebarLayout({ children }: SidebarProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'education', 'about', 'projects', 'resume'];
-      const scrollPosition = window.scrollY + 200; // Offset for better detection
+      const sections = ['home', 'education', 'about', 'projects', 'contact'];
+      const scrollPosition = window.scrollY + 400; // Offset for better detection
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.getElementById(sections[i]);
@@ -33,11 +33,11 @@ export default function SidebarLayout({ children }: SidebarProps) {
   }, []);
 
   const navLinks = [
-    { href: '', label: 'HOME', id: 'home' },
+    { href: '#home', label: 'HOME', id: 'home' },
     { href: '#education', label: 'EDUCATION', id: 'education' },
     { href: '#about', label: 'ABOUT ME', id: 'about' },
     { href: '#projects', label: 'PROJECTS', id: 'projects' },
-    { href: '#contact', label: 'CONTACT', id: 'contact' },
+    { href: '#contact', label: 'CONTACT', id: 'contact' }
 
   ];
 
@@ -66,6 +66,18 @@ export default function SidebarLayout({ children }: SidebarProps) {
             <a
               key={link.id}
               href={link.href}
+              onClick={(e) => {
+                if (link.href?.startsWith('#')) {
+                  e.preventDefault();
+                  const id = link.href.replace('#', '');
+                  const el = document.getElementById(id);
+                  if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // update URL hash without causing an extra jump
+                    // history.replaceState(null, '', link.href);
+                  }
+                }
+              }}
               className={`px-3 py-2 rounded transition-all duration-300 w-full text-center ${
                 activeSection === link.id
                   ? 'bg-blue-900/50 text-blue-300 border-l-4 border-blue-400 shadow-lg shadow-blue-500/20'

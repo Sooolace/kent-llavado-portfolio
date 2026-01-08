@@ -3,8 +3,10 @@ import About from "@/src/sections/about";
 import Projects from "../sections/projects";
 import SidebarLayout from "@/src/components/Sidebar";
 import Education from "../sections/education";
+import Contact from "../sections/contact";
 
-export default function Home() {
+
+export default function Page() {
   return (
     <SidebarLayout>
       <section id="home">
@@ -19,7 +21,9 @@ export default function Home() {
       <section id="projects">
         <Projects />
       </section>
-
+      <section id="contact">
+        <Contact />
+      </section>
     </SidebarLayout>
   );
 }
