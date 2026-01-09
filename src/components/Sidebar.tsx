@@ -14,7 +14,7 @@ export default function SidebarLayout({ children }: SidebarProps) {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['home', 'education', 'about', 'projects', 'contact'];
-      const scrollPosition = window.scrollY + 400; // Offset for better detection
+      const scrollPosition = window.scrollY + 300; // Offset for better detection
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.getElementById(sections[i]);
@@ -119,7 +119,7 @@ export default function SidebarLayout({ children }: SidebarProps) {
             <FaFacebook size={24} />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/kent-llavado-7503933a5/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-blue-400 transition-colors duration-300 hover:scale-110 transform"

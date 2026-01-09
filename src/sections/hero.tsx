@@ -60,7 +60,7 @@ export default function Hero() {
           <div className="mb-2">
             <span className="text-gray-500 mr-4">02</span>
             <span className="text-gray-100">
-              &lt;I'm{' '}
+              &lt;I am{' '}
               <span className="text-blue-400 font-semibold">{displayText}</span>
               <span className="inline-block w-2 h-5 bg-blue-400 ml-1 animate-pulse"></span>
               .
@@ -71,7 +71,8 @@ export default function Hero() {
           <div className="mb-8">
             <span className="text-gray-500 mr-4">03</span>
             <span className="text-gray-100">
-            &lt;I also design posters and logos....&gt;
+            &lt;I also design <span className="text-blue-400 font-semibold">posters</span> and 
+            <span className="text-blue-400 font-semibold"> logos</span>....&gt;
             </span>
           </div>
         </div>

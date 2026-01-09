@@ -1,12 +1,31 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { FaEnvelope, FaPhone, FaLinkedin, FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [error, setError] = useState<string | null>(null);
+  const [inView, setInView] = useState(false);
+  const ref = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setInView(entry.isIntersecting);
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -39,10 +58,13 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-20 px-6 bg-[#0a192f] relative">
+    <section
+      ref={ref}
+      id="contact"
+      className={`py-20 px-6 bg-[#0a192f] relative transition-all duration-700 will-change-transform ease-out ${inView ? 'opacity-100 translate-y-0 scale-100 animate-float' : 'opacity-0 translate-y-8 scale-95'}`}>
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8">
-          <h2 className="text-4xl font-bold mb-2 text-gray-100">Connect with me</h2>
+          <h2 className="text-4xl font-bold mb-2 text-gray-100">Work with me</h2>
           <p className="text-gray-400">Have a project or just want to say hi? Send a message and I’ll get back to you.</p>
         </div>
 

@@ -2,13 +2,16 @@ import Hero from "@/src/sections/hero";
 import About from "@/src/sections/about";
 import Projects from "../sections/projects";
 import SidebarLayout from "@/src/components/Sidebar";
+import FloatingButton from "@/src/components/FloatingButton";
 import Education from "../sections/education";
 import Contact from "../sections/contact";
 
 
 export default function Page() {
   return (
+
     <SidebarLayout>
+<FloatingButton />
       <section id="home">
         <Hero />
       </section>

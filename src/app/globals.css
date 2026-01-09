@@ -30,3 +30,77 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
 }
+
+/* globals.css or Button.module.css */
+
+.fancy-button {
+  position: relative;
+  border-radius: 26px;
+  padding: 0.75rem 1.5rem; /* 12px 24px */
+  font-weight: bold;
+  color: white;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.fancy-button::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 26px;
+  background-image: linear-gradient(
+    90deg,
+    #0065ff,
+    #6942ef,
+    #6554c0,
+    #008cff,
+    #0065ff,
+    #6942ef
+  );
+  background-size: 500%;
+  background-position: 0% 0%;
+  filter: blur(10px);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.2s, background-position 4s linear;
+}
+
+.fancy-button:hover::before {
+  opacity: 1;
+  animation: gradient-move 4s linear infinite;
+}
+
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+
+}
+@keyframes gradient-glow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-gradient {
+  background-size: 200% 200%;
+  animation: gradient-glow 4s ease infinite;
+}
+
+/* Float animation for contact section */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
