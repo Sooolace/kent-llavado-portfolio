@@ -8,12 +8,21 @@ const projects = [
     title: 'Cor Jesu College Digital Repository',
     description: 'A web-based system for storing and managing Cor Jesu College works efficiently, built with React, Node.js, and PostgreSQL."',
     image: '/images/digitalrepo.jpg',
-    technologies: ['React', 'Node.js with ',  'TypeScript',  'PostreSQL'],
+    technologies: ['React', 'Node.js with ',  'TypeScript',  'PostgreSQL'],
     link: 'https://cor-jesu-college-digital-repository.vercel.app/',
     github: 'https://github.com/Sooolace/Cor-Jesu-College-Digital-Repository',
   },
   {
     id: 2,
+    title: 'Clima - Weather Forecasting Website',
+    description: 'A weather forecasting website that provides real-time weather updates and forecasts using WEATHER API, built with Next.js, Tailwind CSS, and Chart.js',
+    image: '/images/clima.jpg',
+    technologies: ['Next.js', 'Tailwind CSS',  'Chart.js',  'WEATHER API'],
+    link: 'https://klclima.vercel.app/',
+    github: '#',
+  },
+  {
+    id: 3,
     title: 'Digos City Veterinary Office Certification System',
     description: 'A system that automates veterinary health certificates, meat shop compliance certificates, and other related certifications, built to streamline issuance and record-keeping.',
     image: '/images/certSystem.jpg',
@@ -22,7 +31,7 @@ const projects = [
     github: '#',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Pet Vaccination Encoding System',
     description: 'A system for recording and managing pet vaccination records efficiently, built with Visual Basic.NET and MySQL, automating data entry by allowing multiple records to be encoded through a single input.',
     image: '',
@@ -30,8 +39,8 @@ const projects = [
     link: '#',
     github: '#',
   },
-  {
-    id: 4,
+    {
+    id: 5,
     title: 'Airline Booking System',
     description: 'A web-based system for managing flight reservations, bookings, and passenger data, built with PHP, MySQL, and CSS.',
     image: '',
