@@ -1,5 +1,7 @@
 'use client';
 
+import { motion } from 'framer-motion';
+
 export default function Education() {
   const educationData = [
     {
@@ -27,37 +29,44 @@ export default function Education() {
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-4xl mx-auto relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-100 mb-4">Education</h2>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          {/* Section Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-100 mb-4">Education</h2>
+          </div>
 
-        {/* Education List */}
-        <div className="space-y-6">
-          {educationData.map((edu, index) => (
-            <div
-              key={index}
-              className="bg-[#0f2547] border border-blue-900/30 p-6 rounded-xl shadow-[0_0_20px_rgba(59,130,246,0.2)] hover:border-blue-700/50 transition-all duration-300"
-            >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                {/* Year */}
-                <div className="text-blue-400 font-semibold text-lg">
-                  {edu.year}
-                </div>
-                
-                {/* Course and School */}
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-gray-100 mb-2">
-                    {edu.course}
-                  </h3>
-                  <p className="text-gray-400">
-                    {edu.school}
-                  </p>
+          {/* Education List */}
+          <div className="space-y-6">
+            {educationData.map((edu, index) => (
+              <div
+                key={index}
+                className="bg-[#0f2547] border border-blue-900/30 p-6 rounded-xl shadow-[0_0_20px_rgba(59,130,246,0.2)] hover:border-blue-700/50 transition-all duration-300"
+              >
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                  {/* Year */}
+                  <div className="text-blue-400 font-semibold text-lg">
+                    {edu.year}
+                  </div>
+                  
+                  {/* Course and School */}
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-gray-100 mb-2">
+                      {edu.course}
+                    </h3>
+                    <p className="text-gray-400">
+                      {edu.school}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

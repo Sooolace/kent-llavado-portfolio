@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image";
-// Project data structure - you can easily add more projects here
+import { motion } from 'framer-motion';
 const projects = [
   {
     id: 1,
@@ -58,6 +58,12 @@ export default function Projects() {
       <div className="absolute top-0 left-1/3 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-6xl mx-auto relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 text-gray-100">Past Projects</h2>
@@ -137,6 +143,7 @@ export default function Projects() {
             </div>
           ))}
         </div>
+        </motion.div>
       </div>
     </section>
   );

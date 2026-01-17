@@ -15,6 +15,7 @@ import {
   SiAdobephotoshop,
   SiCanva
 } from 'react-icons/si';
+import { motion } from 'framer-motion';
 
 export default function About() {
   const frontendTech = [
@@ -70,42 +71,49 @@ export default function About() {
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-6xl mx-auto relative z-10">
-        {/* About Text */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-100 mb-4">Short Profile</h2>
-          <p className="text-lg text-gray-300 mb-4 max-w-3xl mx-auto">
-            I am a Frontend Developer with knowledge in Backend development.
-          </p>
-          <p className="text-gray-400 mb-4 max-w-3xl mx-auto">
-            I create websites and applications with a focus on clean, user-friendly interfaces, 
-            reusable components, and efficient frontend logic. I enjoy turning ideas into working digital products.
-          </p>
-        </div>
-
-        {/* Tech Stack Sections */}
-        <div className="grid md:grid-cols-2 gap-8 mb-8">
-          {/* Frontend */}
-          <div className="bg-[#0f2547] border border-blue-900/30 p-6 rounded-xl shadow-[0_0_20px_rgba(59,130,246,0.2)]">
-            <TechStackSection title="Frontend" items={frontendTech} />
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          {/* About Text */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-100 mb-4">Short Profile</h2>
+            <p className="text-lg text-gray-300 mb-4 max-w-3xl mx-auto">
+              I am a Frontend Developer with knowledge in Backend development.
+            </p>
+            <p className="text-gray-400 mb-4 max-w-3xl mx-auto">
+              I create websites and applications with a focus on clean, user-friendly interfaces, 
+              reusable components, and efficient frontend logic. I enjoy turning ideas into working digital products.
+            </p>
           </div>
 
-          {/* Backend */}
-          <div className="bg-[#0f2547] border border-blue-900/30 p-6 rounded-xl shadow-[0_0_20px_rgba(59,130,246,0.2)]">
-            <TechStackSection title="Backend" items={backendTech} />
-          </div>
-        </div>
+          {/* Tech Stack Sections */}
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            {/* Frontend */}
+            <div className="bg-[#0f2547] border border-blue-900/30 p-6 rounded-xl shadow-[0_0_20px_rgba(59,130,246,0.2)]">
+              <TechStackSection title="Frontend" items={frontendTech} />
+            </div>
 
-        <div className='grid md:grid-cols-2 gap-8 mb-8'>
-                      {/* Database */}
-          <div className="bg-[#0f2547] border border-blue-900/30 p-6 rounded-xl shadow-[0_0_20px_rgba(59,130,246,0.2)]">
-            <TechStackSection title="Database" items={databaseTech} />
+            {/* Backend */}
+            <div className="bg-[#0f2547] border border-blue-900/30 p-6 rounded-xl shadow-[0_0_20px_rgba(59,130,246,0.2)]">
+              <TechStackSection title="Backend" items={backendTech} />
+            </div>
           </div>
 
-          {/* Design */}
-          <div className="bg-[#0f2547] border border-blue-900/30 p-6 rounded-xl shadow-[0_0_20px_rgba(59,130,246,0.2)]">
-            <TechStackSection title="UI/UX Tools" items={designTools} />
+          <div className='grid md:grid-cols-2 gap-8 mb-8'>
+                        {/* Database */}
+            <div className="bg-[#0f2547] border border-blue-900/30 p-6 rounded-xl shadow-[0_0_20px_rgba(59,130,246,0.2)]">
+              <TechStackSection title="Database" items={databaseTech} />
+            </div>
+
+            {/* Design */}
+            <div className="bg-[#0f2547] border border-blue-900/30 p-6 rounded-xl shadow-[0_0_20px_rgba(59,130,246,0.2)]">
+              <TechStackSection title="UI/UX Tools" items={designTools} />
+            </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
