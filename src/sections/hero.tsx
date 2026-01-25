@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 
 export default function Hero() {
-  const roles = ['Developer', 'Designer', 'IT Support Specialist'];
+  const roles = ['a Developer', 'a Designer', 'an IT Support Specialist'];
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);

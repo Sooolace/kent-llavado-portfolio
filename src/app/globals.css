@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a192f;
+  --foreground: #ededed;
 }
 
 
@@ -25,10 +25,10 @@ html, body, #__next, main {
   scroll-behavior: smooth;
 }
 
-body {  
-  background: var(--background);
+html, body {  
+  background: #0a192f;
   color: var(--foreground);
-  font-family: var(--font-sans);
+  min-height: 100%;
 }
 
 /* globals.css or Button.module.css */

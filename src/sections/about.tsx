@@ -20,7 +20,6 @@ import { motion } from 'framer-motion';
 export default function About() {
   const frontendTech = [
     { name: 'React', icon: SiReact, color: 'text-blue-500' },
-    { name: 'Next.js', icon: SiNextdotjs, color: 'text-gray-100' },
     { name: 'JavaScript', icon: SiJavascript, color: 'text-yellow-500' },
     { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-400' },
     { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'text-cyan-500' },

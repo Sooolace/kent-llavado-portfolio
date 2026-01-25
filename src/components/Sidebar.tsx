@@ -13,7 +13,7 @@ export default function SidebarLayout({ children }: SidebarProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'education', 'about', 'projects', 'contact'];
+      const sections = ['home','about',  'education', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 300; // Offset for better detection
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -34,8 +34,8 @@ export default function SidebarLayout({ children }: SidebarProps) {
 
   const navLinks = [
     { href: '#home', label: 'HOME', id: 'home' },
-    { href: '#education', label: 'EDUCATION', id: 'education' },
     { href: '#about', label: 'ABOUT ME', id: 'about' },
+    { href: '#education', label: 'EDUCATION', id: 'education' },
     { href: '#projects', label: 'PROJECTS', id: 'projects' },
     { href: '#contact', label: 'CONTACT', id: 'contact' }
 

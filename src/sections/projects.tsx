@@ -8,7 +8,7 @@ const projects = [
     title: 'Cor Jesu College Digital Repository',
     description: 'A web-based system for storing and managing Cor Jesu College works efficiently, built with React, Node.js, and PostgreSQL."',
     image: '/images/digitalrepo.jpg',
-    technologies: ['React', 'Node.js with ',  'TypeScript',  'PostgreSQL'],
+    technologies: ['React', 'Node.js with ',  'Javascript',  'PostgreSQL'],
     link: 'https://cor-jesu-college-digital-repository.vercel.app/',
     github: 'https://github.com/Sooolace/Cor-Jesu-College-Digital-Repository',
   },
